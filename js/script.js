@@ -19,17 +19,19 @@ for(i = 0; i < cell.length; i++) {
 	cell[i].setAttribute("x", x);
 	cell[i].setAttribute("y", y);
 	x++;
-	if((i % 2 == 0 && y % 2 == 0) || (i % 2 != 0 && y % 2 != 0)) {
+	if(( (x+y)% 2 ===0)) {
 		cell[i].classList.add("black-cell");
 	}
 };
 // handling mouse coords
 field.addEventListener("click", event=>{
 	let el = event.target;
-	let elX = el.attributes.x.value;
-	let elY = el.attributes.y.value;
+	let elX = el.getAttribute("x");
+	let elY = el.getAttribute("y");
 	document.querySelectorAll('.cell.active').forEach(e=>e.classList.remove('active'));
-	el.classList.add("active");
+	if(el.classList.contains("cell")) {
+		el.classList.add("active");
+	}	
 	horsepos(elX,elY);
 });
 // check possible moves 

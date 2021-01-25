@@ -17,10 +17,12 @@
 	background-color: black;
 }
 .active {
-	background-color: green;
+	background-image: url("../img/horse.png");
+	background-color: transparent;
+	background-size: cover
 }
 
-.horse { background-color: red; }
+.horse { background-color: #cdcdcd; }
 
 
 
